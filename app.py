@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
- 
+import openai
+
 st.title("📊 Analyse rapide de ventes")
  
 data = {
