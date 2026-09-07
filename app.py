@@ -1,13 +1,15 @@
 import streamlit as st
+import pandas as pd
  
-st.title("🚀 Mon premier outil en ligne")
+st.title("📊 Analyse rapide de ventes")
  
-st.write("Entre ton prénom :")
+data = {
+    "Produit": ["A", "B", "C"],
+    "Ventes": [120, 90, 150]
+}
  
-prenom = st.text_input("Prénom")
+df = pd.DataFrame(data)
  
-if st.button("Valider"):
-    if prenom:
-        st.success(f"Bonjour {prenom} 👋")
-    else:
-        st.warning("Entre d'abord ton prénom.")
+st.write(df)
+ 
+st.bar_chart(df.set_index("Produit"))
